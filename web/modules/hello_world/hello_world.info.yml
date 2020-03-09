@@ -1,0 +1,6 @@
+name: 01 Hello World!
+type: module
+description: Notre premier module Drupal 8
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
