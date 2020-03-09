@@ -22,3 +22,16 @@ function hello_world_help(
   }
   return null;
 }
+
+/**
+ * Implements hook_theme().
+ */
+function hello_world_theme($existing, $type, $theme, $path) {
+  return [
+    'example' => [ // le nom du template est par défaut la clé du type de rendu
+      'variables' => [ //les variables mises à disposition du template doivent être déclarées ici
+        'my_var1' => '',
+      ]
+    ],
+  ];
+}

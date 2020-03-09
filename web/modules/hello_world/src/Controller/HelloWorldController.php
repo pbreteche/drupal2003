@@ -15,8 +15,8 @@ class HelloWorldController extends ControllerBase {
   public function build() {
 
     $build['content'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#theme' => 'example',
+      '#my_var1' => $this->t('It works!'),
     ];
 
     return $build;

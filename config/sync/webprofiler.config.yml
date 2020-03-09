@@ -16,6 +16,7 @@ active_toolbar_items:
   performance_timing: performance_timing
   request: request
   routing: routing
+  theme: theme
   time: time
   user: user
   views: views
@@ -25,7 +26,6 @@ active_toolbar_items:
   mail: '0'
   services: '0'
   state: '0'
-  theme: '0'
   translations: '0'
 query_sort: source
 query_highlight: 5
