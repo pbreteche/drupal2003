@@ -14,9 +14,22 @@ class HelloWorldController extends ControllerBase {
    */
   public function build() {
 
+    $build['header'] = [
+      '#theme' => 'example',
+      '#my_var1' => $this->t('It works in header!'),
+    ];
+
     $build['content'] = [
       '#theme' => 'example',
       '#my_var1' => $this->t('It works!'),
+    ];
+
+    $build['footer'] = [
+      '#theme' => 'example',
+      '#my_var1' => [
+        '#theme' => 'item_list',
+        '#items' => ['pomme', 'poire', 'cerise'],
+      ]
     ];
 
     return $build;
