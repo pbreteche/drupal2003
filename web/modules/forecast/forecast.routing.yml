@@ -1,0 +1,7 @@
+forecast.settings_form:
+  path: '/admin/config/system/forecast'
+  defaults:
+    _title: 'Forecast settings'
+    _form: 'Drupal\forecast\Form\SettingsForm'
+  requirements:
+    _permission: 'administer forecast configuration'

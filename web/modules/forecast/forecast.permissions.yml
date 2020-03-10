@@ -1,0 +1,4 @@
+administer forecast configuration:
+  title: 'Administer forecast configuration'
+  description: 'Optional description.'
+  restrict access: true

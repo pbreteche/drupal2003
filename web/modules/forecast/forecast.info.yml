@@ -1,0 +1,6 @@
+name: Forecast
+type: module
+description: forecast manager, provide blocks and other features
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
