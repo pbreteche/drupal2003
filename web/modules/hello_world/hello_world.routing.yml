@@ -5,3 +5,12 @@ hello_world.example:
     _controller: '\Drupal\hello_world\Controller\HelloWorldController::build'
   requirements:
     _permission: 'access content'
+
+
+hello_world.week:
+  path: '/hello-world/week'
+  defaults:
+    _title: 'Week'
+    _controller: '\Drupal\hello_world\Controller\HelloWorldController::week'
+  requirements:
+    _permission: 'access content'

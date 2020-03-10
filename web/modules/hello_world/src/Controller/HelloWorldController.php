@@ -35,4 +35,19 @@ class HelloWorldController extends ControllerBase {
     return $build;
   }
 
+  public function week() {
+    $nextDay = new \DateTimeImmutable('tomorrow');
+    $lastDay = new \DateTime('next sunday');
+    $weekDays = [];
+
+    while ($nextDay < $lastDay) {
+      $weekDays[] = $nextDay;
+      $nextDay = $nextDay->modify('next day');
+    }
+
+    return [
+      '#theme' => 'week',
+      '#week_days' => $weekDays,
+    ];
+  }
 }
