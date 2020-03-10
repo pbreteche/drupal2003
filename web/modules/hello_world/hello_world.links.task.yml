@@ -1,0 +1,9 @@
+hello_world.example.tab1:
+  title: first tab
+  route_name: hello_world.example
+  base_route: hello_world.example
+
+hello_world.example.tab2:
+  title: second tab
+  route_name: hello_world.week
+  base_route: hello_world.example
