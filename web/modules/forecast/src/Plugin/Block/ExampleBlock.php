@@ -41,6 +41,12 @@ class ExampleBlock extends BlockBase {
     return $form;
   }
 
+  public function blockValidate($form, FormStateInterface $form_state) {
+    if (!preg_match('#^[A-Z]#', $form_state->getValue('city'))) {
+      $form_state->setErrorByName('city', $this->t('Commencez par une majuscule'));
+    }
+  }
+
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->setConfigurationValue(
       'city',
