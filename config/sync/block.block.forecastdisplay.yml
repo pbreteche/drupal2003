@@ -1,0 +1,21 @@
+uuid: 0b7bd888-c6bd-4dc6-a53c-2c4cbf2a1a78
+langcode: fr
+status: true
+dependencies:
+  module:
+    - forecast
+  theme:
+    - bartik
+id: forecastdisplay
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: forecast_display
+settings:
+  id: forecast_display
+  label: 'Forecast display'
+  provider: forecast
+  label_display: visible
+  city: Bordeaux
+visibility: {  }
