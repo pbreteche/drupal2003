@@ -1,0 +1,6 @@
+hello_world.first_action:
+  title: ajouter
+  route_name: hello_world.example
+  route_parameters: { info: 'action' }
+  appears_on:
+    - hello_world.week
