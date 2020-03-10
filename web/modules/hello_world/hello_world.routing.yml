@@ -15,4 +15,4 @@ hello_world.week:
     _title: 'Week'
     _controller: '\Drupal\hello_world\Controller\HelloWorldController::week'
   requirements:
-    _permission: 'access content'
+    _permission: 'access hello page'
