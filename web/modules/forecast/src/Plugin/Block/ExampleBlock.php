@@ -3,6 +3,7 @@
 namespace Drupal\forecast\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\ConfigFormBaseTrait;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -14,15 +15,13 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class ExampleBlock extends BlockBase {
 
-  const CITY_DEFAULT_VALUE = 'France';
-
   /**
    * {@inheritdoc}
    */
   public function build() {
     $city = $this->getConfiguration()['city'];
     if (empty($city)) {
-      $city = self::CITY_DEFAULT_VALUE;
+      $city = \Drupal::config('forecast.settings')->get('default_city');
     }
 
     $build['content'] = [

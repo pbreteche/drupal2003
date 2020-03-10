@@ -1,0 +1,6 @@
+forecast.admin:
+  title: Forecast settings
+  description: Configure forecast module
+  route_name: forecast.settings_form
+  menu_name: admin
+  parent: system.admin_config_system
