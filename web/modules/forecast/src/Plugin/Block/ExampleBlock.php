@@ -5,11 +5,9 @@ namespace Drupal\forecast\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides an example block.
- *
  * @Block(
- *   id = "forecast_example",
- *   admin_label = @Translation("Example"),
+ *   id = "forecast_display",
+ *   admin_label = @Translation("Forecast display"),
  *   category = @Translation("Forecast")
  * )
  */
