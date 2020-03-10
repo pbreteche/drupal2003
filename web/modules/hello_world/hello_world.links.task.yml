@@ -5,5 +5,12 @@ hello_world.example.tab1:
 
 hello_world.example.tab2:
   title: second tab
+  route_name: hello_world.example
+  route_parameters: { info: demo }
+  base_route: hello_world.example
+
+hello_world.example.tab3:
+  title: thirs tab
   route_name: hello_world.week
   base_route: hello_world.example
+

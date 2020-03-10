@@ -12,11 +12,11 @@ class HelloWorldController extends ControllerBase {
   /**
    * Builds the response.
    */
-  public function build() {
+  public function build($info) {
 
     $build['header'] = [
       '#theme' => 'example',
-      '#my_var1' => $this->t('It works in header!'),
+      '#my_var1' => $info,
     ];
 
     $build['content'] = [

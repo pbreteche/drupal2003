@@ -1,9 +1,11 @@
 hello_world.example:
-  path: '/hello-world/example'
+  path: '/hello-world/{info}'
   defaults:
+    info: 'example'
     _title: 'Example'
     _controller: '\Drupal\hello_world\Controller\HelloWorldController::build'
   requirements:
+    info: '[a-z_-]+'
     _permission: 'access content'
 
 
