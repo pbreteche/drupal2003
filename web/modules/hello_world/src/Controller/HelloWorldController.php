@@ -14,6 +14,8 @@ class HelloWorldController extends ControllerBase {
    */
   public function build($info) {
 
+    $build['#contextual_links'] = ['hello'=>[]];
+
     $build['header'] = [
       '#theme' => 'example',
       '#my_var1' => $info,

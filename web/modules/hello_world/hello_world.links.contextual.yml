@@ -1,0 +1,5 @@
+hello_world.contextual1:
+  title: 'modifier'
+  route_name: 'hello_world.week'
+  group: 'hello'
+  weight: 25
