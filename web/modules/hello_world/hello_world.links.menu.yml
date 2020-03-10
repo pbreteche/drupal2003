@@ -1,0 +1,12 @@
+hello_world.example:
+  title: Hello World Example
+  description: Notre première page produite avec un module
+  route_name: hello_world.example
+  menu_name: main
+
+hello_world.week:
+  title: Semaine
+  description: Liste les jour de la semaine
+  route_name: hello_world.week
+  menu_name: main
+  parent: hello_world.example
