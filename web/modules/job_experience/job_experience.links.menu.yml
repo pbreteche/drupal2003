@@ -1,0 +1,5 @@
+job_experience.index:
+  title: My experiences
+  description: What I did
+  route_name: job_experience.index
+  menu_name: account

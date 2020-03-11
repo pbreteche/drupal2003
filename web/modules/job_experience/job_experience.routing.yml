@@ -1,7 +1,15 @@
-job_experience.example:
-  path: '/job-experience/example'
+job_experience.index:
+  path: '/job-experience'
   defaults:
-    _title: 'Example'
-    _controller: '\Drupal\job_experience\Controller\JobExperienceController::build'
+    _title: 'My experiences'
+    _controller: '\Drupal\job_experience\Controller\JobExperienceController::index'
   requirements:
-    _permission: 'access content'
+    _permission: 'view job_experience'
+
+job_experience.add:
+  path: '/job-experience/add'
+  defaults:
+    _title: 'New experience'
+    _controller: '\Drupal\job_experience\Controller\JobExperienceController::new'
+  requirements:
+    _permission: 'declare job_experience'

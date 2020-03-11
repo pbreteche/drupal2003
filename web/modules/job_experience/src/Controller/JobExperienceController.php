@@ -12,14 +12,23 @@ class JobExperienceController extends ControllerBase {
   /**
    * Builds the response.
    */
-  public function build() {
+  public function index() {
+    $database = \Drupal::database();
+
+    $query = $database->query('SELECT id, uid, startAt, endAt, description FROM {job_experience}');
+
+    $experiences = $query->fetchAll();
 
     $build['content'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#theme' => 'index',
+      '#experiences' => $experiences,
     ];
 
     return $build;
+  }
+
+  public function new() {
+
   }
 
 }
