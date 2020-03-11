@@ -15,6 +15,8 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class ExampleBlock extends BlockBase {
 
+  const BASE_CITY_API = 'https://geo.api.gouv.fr/communes?fields=nom&format=json&nom=';
+
   /**
    * {@inheritdoc}
    */
@@ -25,7 +27,7 @@ class ExampleBlock extends BlockBase {
     }
 
     $build['content'] = [
-      '#markup' => $this->t('La météo de '.$city),
+      '#markup' => $this->t('La météo de '.htmlspecialchars($city)),
     ];
     return $build;
   }
@@ -41,8 +43,32 @@ class ExampleBlock extends BlockBase {
   }
 
   public function blockValidate($form, FormStateInterface $form_state) {
-    if (!preg_match('#^[A-Z]#', $form_state->getValue('city'))) {
-      $form_state->setErrorByName('city', $this->t('Commencez par une majuscule'));
+
+    $client = \Drupal::httpClient();
+
+    $response = $client->get(self::BASE_CITY_API.urlencode($form_state->getValue('city')));
+
+    $cities = json_decode($response->getBody());
+
+    $found = [];
+
+    foreach($cities as $city) {
+      if (1 == $city->_score) {
+        $found[] = $city;
+      }
+    }
+
+    if(empty($found)) {
+      $form_state->setErrorByName('city', $this->t('No city found with this name'));
+    }
+
+    if(1 === count($found)) {
+      $form_state->setValue('city', $found[0]->nom);
+    }
+
+    if(1 < count($found)) {
+      \Drupal::logger('forecast')->warning('Multiple cities with same name: '.$form_state->getValue('city'));
+      \Drupal::messenger()->addMessage('Multiple cities with same name', 'warning');
     }
   }
 
