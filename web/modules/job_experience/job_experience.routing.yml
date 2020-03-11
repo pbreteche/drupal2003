@@ -1,0 +1,7 @@
+job_experience.example:
+  path: '/job-experience/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\job_experience\Controller\JobExperienceController::build'
+  requirements:
+    _permission: 'access content'

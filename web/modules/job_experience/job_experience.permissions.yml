@@ -1,0 +1,10 @@
+view job_experience:
+  title: 'View job_experience'
+
+declare job_experience:
+  title: 'Declare job_experience'
+
+administer job_experience configuration:
+  title: 'Administer job_experience configuration'
+  description: 'Optional description.'
+  restrict access: true
