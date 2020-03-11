@@ -7,11 +7,11 @@ job_experience.index:
     _permission: 'view job_experience'
     _role: 'authenticated'
 
-job_experience.add:
-  path: '/job-experience/add'
+job_experience.new:
+  path: '/job-experience/new'
   defaults:
-    _title: 'New experience'
-    _controller: '\Drupal\job_experience\Controller\JobExperienceController::new'
+    _title: 'Declare experience'
+    _form: 'Drupal\job_experience\Form\NewForm'
   requirements:
     _permission: 'declare job_experience'
     _role: 'authenticated'
