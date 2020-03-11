@@ -13,9 +13,12 @@ class JobExperienceController extends ControllerBase {
    * Builds the response.
    */
   public function index() {
+    $user = \Drupal::currentUser();
     $database = \Drupal::database();
 
-    $query = $database->query('SELECT id, uid, startAt, endAt, description FROM {job_experience}');
+    $query = $database->query('SELECT id, uid, startAt, endAt, description FROM {job_experience} WHERE uid = :uid', [
+      ':uid' => $user->id(),
+    ]);
 
     $experiences = $query->fetchAll();
 

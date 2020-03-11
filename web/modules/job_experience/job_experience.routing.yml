@@ -5,6 +5,7 @@ job_experience.index:
     _controller: '\Drupal\job_experience\Controller\JobExperienceController::index'
   requirements:
     _permission: 'view job_experience'
+    _role: 'authenticated'
 
 job_experience.add:
   path: '/job-experience/add'
@@ -13,3 +14,4 @@ job_experience.add:
     _controller: '\Drupal\job_experience\Controller\JobExperienceController::new'
   requirements:
     _permission: 'declare job_experience'
+    _role: 'authenticated'
